@@ -1,0 +1,62 @@
+﻿@page
+@model IJMmachines.Pages.Machines.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Machine</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Machine.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Machine.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Machine.Manufacturer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Machine.Manufacturer)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Machine.Tonnage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Machine.Tonnage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Machine.MachineNumberOfDefectsDamaged)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Machine.MachineNumberOfDefectsDamaged)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Machine.ProcessingDefects)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Machine.ProcessingDefects)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Machine.MachineCost)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Machine.MachineCost)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Machine.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Machine.Description)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Machine.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

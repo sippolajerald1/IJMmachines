@@ -1,0 +1,66 @@
+﻿@page
+@model IJMmachines.Pages.Machines.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Machine</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Machine.Id" />
+            <div class="form-group">
+                <label asp-for="Machine.Date" class="control-label"></label>
+                <input asp-for="Machine.Date" class="form-control" />
+                <span asp-validation-for="Machine.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Machine.Manufacturer" class="control-label"></label>
+                <input asp-for="Machine.Manufacturer" class="form-control" />
+                <span asp-validation-for="Machine.Manufacturer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Machine.Tonnage" class="control-label"></label>
+                <input asp-for="Machine.Tonnage" class="form-control" />
+                <span asp-validation-for="Machine.Tonnage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Machine.MachineNumberOfDefectsDamaged" class="control-label"></label>
+                <input asp-for="Machine.MachineNumberOfDefectsDamaged" class="form-control" />
+                <span asp-validation-for="Machine.MachineNumberOfDefectsDamaged" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Machine.ProcessingDefects" class="control-label"></label>
+                <input asp-for="Machine.ProcessingDefects" class="form-control" />
+                <span asp-validation-for="Machine.ProcessingDefects" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Machine.MachineCost" class="control-label"></label>
+                <input asp-for="Machine.MachineCost" class="form-control" />
+                <span asp-validation-for="Machine.MachineCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Machine.Description" class="control-label"></label>
+                <input asp-for="Machine.Description" class="form-control" />
+                <span asp-validation-for="Machine.Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

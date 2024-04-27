@@ -1,0 +1,90 @@
+﻿@page
+@model IJMmachines.Pages.Machines.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<form>
+    <p>
+        Manufacturer: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Machine[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Machine[0].Manufacturer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Machine[0].Tonnage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Machine[0].MachineNumberOfDefectsDamaged)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Machine[0].ProcessingDefects)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Machine[0].MachineCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Machine[0].Description)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Machine) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manufacturer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tonnage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MachineNumberOfDefectsDamaged)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProcessingDefects)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MachineCost)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.Description)
+             </td>
+          </tr>
+          <tr>
+              
+          <td colspan="6">
+
+
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <hr />
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

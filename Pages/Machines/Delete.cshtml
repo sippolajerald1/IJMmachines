@@ -1,0 +1,66 @@
+﻿@page
+@model IJMmachines.Pages.Machines.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Machine</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Machine.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Machine.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Machine.Manufacturer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Machine.Manufacturer)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Machine.Tonnage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Machine.Tonnage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Machine.MachineNumberOfDefectsDamaged)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Machine.MachineNumberOfDefectsDamaged)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Machine.ProcessingDefects)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Machine.ProcessingDefects)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Machine.MachineCost)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Machine.MachineCost)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Machine.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Machine.Description)
+        </dd>
+
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Machine.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
